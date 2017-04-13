@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalWatch.Api", "CalWatch.Api\CalWatch.Api.csproj", "{597FCFFD-E4D2-4688-A438-78ADF6B56063}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalWatch.Data", "CalWatch.Data\CalWatch.Data.csproj", "{9A752186-7B49-4121-81DF-3D841AE007B8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalWatch.UnitTests", "CalWatch.UnitTests\CalWatch.UnitTests.csproj", "{3FD25496-3CB4-4190-AC62-FDE75C672625}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{597FCFFD-E4D2-4688-A438-78ADF6B56063}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{597FCFFD-E4D2-4688-A438-78ADF6B56063}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{597FCFFD-E4D2-4688-A438-78ADF6B56063}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{597FCFFD-E4D2-4688-A438-78ADF6B56063}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9A752186-7B49-4121-81DF-3D841AE007B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A752186-7B49-4121-81DF-3D841AE007B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A752186-7B49-4121-81DF-3D841AE007B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A752186-7B49-4121-81DF-3D841AE007B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3FD25496-3CB4-4190-AC62-FDE75C672625}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3FD25496-3CB4-4190-AC62-FDE75C672625}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3FD25496-3CB4-4190-AC62-FDE75C672625}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3FD25496-3CB4-4190-AC62-FDE75C672625}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

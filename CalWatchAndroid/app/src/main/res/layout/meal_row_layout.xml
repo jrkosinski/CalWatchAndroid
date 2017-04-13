@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <Button
+        android:id="@+id/editButton"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:textAlignment="center"
+        android:background="@drawable/gray_button"
+        android:textColor="@color/colorWhite"
+        android:textAllCaps="false"
+        android:layout_toLeftOf="@+id/deleteButton"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:text="..." >
+    </Button>
+
+    <TextView
+        android:id="@+id/descriptionLabel"
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:layout_alignParentLeft="true"
+        android:layout_toStartOf="@id/editButton"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="3dp"
+        android:textSize="20px" >
+    </TextView>
+
+    <Button
+        android:id="@+id/deleteButton"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:textAlignment="center"
+        android:background="@drawable/gray_button"
+        android:textColor="@color/colorRed"
+        android:textAllCaps="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:text="X" >
+    </Button>
+</RelativeLayout>

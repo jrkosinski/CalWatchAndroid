@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">CalWatchAndroid</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="title_activity_signup">SignupActivity</string>
+    <string name="title_activity_meals_view">MealsViewActivity</string>
+    <string name="title_activity_create_meal">CreateMealActivity</string>
+    <string name="title_activity_date_select">DateSelectActivity</string>
+    <string name="title_activity_time_select">TimeSelectActivity</string>
+    <string name="title_activity_date_time_picker">DateTimePickerActivity</string>
+    <string name="title_activity_user_settings">UserSettingsActivity</string>
+    <string name="title_activity_meals_filter">MealsFilterActivity</string>
+    <string name="title_activity_switch_user">SwitchUserActivity</string>
+    <string name="signup_text"><u>click to sign up</u></string>
+</resources>

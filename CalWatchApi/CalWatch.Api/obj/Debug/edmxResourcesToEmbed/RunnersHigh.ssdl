@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="RunnersHighModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="RunnersHighModelStoreContainer">
+    <EntitySet Name="RunTime" EntityType="RunnersHighModel.Store.RunTime" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="User" EntityType="RunnersHighModel.Store.User" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_RunTime_User" Association="RunnersHighModel.Store.FK_RunTime_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="RunTime" EntitySet="RunTime" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="RunTime">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="Date" Type="datetime" Nullable="false" />
+    <Property Name="Distance" Type="int" Nullable="false" />
+    <Property Name="DistanceUnit" Type="int" Nullable="false" />
+    <Property Name="TimeStart" Type="datetime" Nullable="false" />
+    <Property Name="TimeEnd" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Username" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="Password" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="DateCreated" Type="datetime" Nullable="false" />
+    <Property Name="PermissionLevel" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_RunTime_User">
+    <End Role="User" Type="RunnersHighModel.Store.User" Multiplicity="1" />
+    <End Role="RunTime" Type="RunnersHighModel.Store.RunTime" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="RunTime">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

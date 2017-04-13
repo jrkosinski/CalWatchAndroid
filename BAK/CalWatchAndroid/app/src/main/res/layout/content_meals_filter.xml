@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:showIn="@layout/activity_meals_filter"
+    tools:context="com.calwatch.android.activities.MealsFilterActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="dates"
+        android:id="@+id/datesLabel"
+        android:layout_marginTop="20dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
+
+    <!-- from dates -->
+    <RelativeLayout
+        android:id="@+id/fromDates"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/datesLabel">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="from"
+            android:id="@+id/dateFromLabel"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="10dp"
+            />
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="-"
+            android:id="@+id/dateFromText"
+            android:layout_marginRight="20dp"
+            android:layout_toLeftOf="@+id/editDateFromButton"  />
+
+        <Button
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:text="..."
+            android:id="@+id/editDateFromButton"
+            android:background="@drawable/gray_button"
+            android:textColor="@color/colorWhite"
+            android:textAllCaps="false"
+            android:layout_toLeftOf="@+id/clearDateFromButton" />
+
+        <Button
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:text="X"
+            android:background="@drawable/gray_button"
+            android:textColor="@color/colorRed"
+            android:textAllCaps="true"
+            android:id="@+id/clearDateFromButton"
+            android:layout_alignParentRight="true" />
+    </RelativeLayout>
+
+    <!-- to dates -->
+    <RelativeLayout
+        android:id="@+id/toDates"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/fromDates">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="to"
+            android:id="@+id/dateToLabel"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="10dp"
+            />
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="-"
+            android:id="@+id/dateToText"
+            android:layout_marginRight="20dp"
+            android:layout_toLeftOf="@+id/editDateToButton"  />
+
+        <Button
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:text="..."
+            android:id="@+id/editDateToButton"
+            android:background="@drawable/gray_button"
+            android:textColor="@color/colorWhite"
+            android:textAllCaps="false"
+            android:layout_toLeftOf="@+id/clearDateToButton" />
+
+        <Button
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:text="X"
+            android:background="@drawable/gray_button"
+            android:textColor="@color/colorRed"
+            android:textAllCaps="true"
+            android:id="@+id/clearDateToButton"
+            android:layout_alignParentRight="true" />
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="times"
+        android:id="@+id/timesLabel"
+        android:layout_below="@+id/toDates"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="20dp" />
+
+    <!-- from times -->
+    <RelativeLayout
+        android:id="@+id/fromTimes"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/timesLabel">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="from"
+            android:id="@+id/timeFromLabel"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="10dp"
+            />
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="-"
+            android:id="@+id/timeFromText"
+            android:layout_marginRight="20dp"
+            android:layout_toLeftOf="@+id/editTimeFromButton"  />
+
+        <Button
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:text="..."
+            android:id="@+id/editTimeFromButton"
+            android:background="@drawable/gray_button"
+            android:textColor="@color/colorWhite"
+            android:textAllCaps="false"
+            android:layout_toLeftOf="@+id/clearTimeFromButton" />
+
+        <Button
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:text="X"
+            android:background="@drawable/gray_button"
+            android:textColor="@color/colorRed"
+            android:textAllCaps="true"
+            android:id="@+id/clearTimeFromButton"
+            android:layout_alignParentRight="true" />
+    </RelativeLayout>
+
+    <!-- to times -->
+    <RelativeLayout
+        android:id="@+id/toTimes"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/fromTimes">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="to"
+            android:id="@+id/timeToLabel"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="10dp"
+            />
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="-"
+            android:id="@+id/timeToText"
+            android:layout_marginRight="20dp"
+            android:layout_toLeftOf="@+id/editTimeToButton"  />
+
+        <Button
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:text="..."
+            android:id="@+id/editTimeToButton"
+            android:background="@drawable/gray_button"
+            android:textColor="@color/colorWhite"
+            android:textAllCaps="false"
+            android:layout_toLeftOf="@+id/clearTimeToButton" />
+
+        <Button
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:text="X"
+            android:background="@drawable/gray_button"
+            android:textColor="@color/colorRed"
+            android:textAllCaps="true"
+            android:id="@+id/clearTimeToButton"
+            android:layout_alignParentRight="true" />
+    </RelativeLayout>
+
+
+
+
+
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="filter"
+        android:id="@+id/filterButton"
+        android:background="@drawable/gray_button"
+        android:textColor="@color/colorWhite"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="50dp"
+        android:textAllCaps="false"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="cancel"
+        android:id="@+id/cancelButton"
+        android:background="@drawable/gray_button"
+        android:textColor="@color/colorWhite"
+        android:textAllCaps="false"
+        android:layout_alignTop="@+id/filterButton"
+        android:layout_toLeftOf="@+id/filterButton" />
+
+
+
+
+    <LinearLayout
+        android:layout_width="3dp"
+        android:layout_height="3dp"
+        android:visibility="gone">
+<!--
+        <TimePicker
+            android:layout_width="1dp"
+            android:layout_height="1dp"
+            android:id="@+id/timePicker" />
+-->
+        <DatePicker
+            android:layout_width="1dp"
+            android:layout_height="1dp"
+            android:id="@+id/datePicker" />
+    </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CalWatchModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="Entities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="Meals" EntityType="CalWatchModel.MealData" />
+    <EntitySet Name="Users" EntityType="CalWatchModel.UserData" />
+    <AssociationSet Name="FK_Meals_Users" Association="CalWatchModel.FK_Meals_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Meals" EntitySet="Meals" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="MealData">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <Property Name="DateTime" Type="DateTime" Nullable="false" Precision="7" />
+    <Property Name="Calories" Type="Int32" Nullable="false" />
+    <Property Name="DateCreated" Type="DateTime" Nullable="false" Precision="7" />
+    <Property Name="DateModified" Type="DateTime" Nullable="false" Precision="7" />
+  </EntityType>
+  <EntityType Name="UserData">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Username" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="Password" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="PermissionLevel" Type="Byte" Nullable="false" />
+    <Property Name="TargetCaloriesPerDay" Type="Int32" Nullable="false" />
+    <Property Name="DateCreated" Type="DateTime" Nullable="false" Precision="7" />
+    <Property Name="DateModified" Type="DateTime" Nullable="false" Precision="7" />
+    <NavigationProperty Name="Meals" Relationship="CalWatchModel.FK_Meals_Users" FromRole="Users" ToRole="Meals" />
+  </EntityType>
+  <Association Name="FK_Meals_Users">
+    <End Role="Users" Type="CalWatchModel.UserData" Multiplicity="1" />
+    <End Role="Meals" Type="CalWatchModel.MealData" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Meals">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

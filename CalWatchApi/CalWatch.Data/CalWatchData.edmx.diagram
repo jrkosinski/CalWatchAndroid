@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="a4fd8178f6674caaadaf1774d15d1c23" Name="Diagram1">
+        <EntityTypeShape EntityType="CalWatch.Data.Model.Meal" Width="1.5" PointX="5.7148805361776054" PointY="23.413968514378169" />
+        <EntityTypeShape EntityType="CalWatch.Data.Model.UserData" Width="1.5" PointX="6.0127024026646758" PointY="26.706188989200719" />
+        <AssociationConnector Association="CalWatch.Data.Model.FK_Meals_Users" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--color name="colorPrimary">#565659</color-->
+    <color name="colorPrimary">#fd5a00</color>
+    <color name="colorPrimaryDark">#2c2c2e</color>
+    <color name="colorAccent">#303035</color>
+    <color name="colorAppBar">#ed9a0b</color>
+    <color name="colorLight">#d7d7d9</color>
+    <color name="colorWhite">#ffffff</color>
+    <color name="colorBlack">#ffffff</color>
+    <color name="colorRed">#dd0000</color>
+    <color name="colorGreen">#52ba03</color>
+    <color name="progress_bar">#88000000</color>
+    <color name="colorTextLink">#f72b47cf</color>
+    <color name="colorGreenHighlight">#f78dd187</color>
+    <color name="colorRedHighlight">#89ed9a0b</color>
+</resources>

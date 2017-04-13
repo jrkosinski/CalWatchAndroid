@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:showIn="@layout/activity_login"
+    android:background="@color/colorAccent"
+    tools:context="com.calwatch.android.activities.LoginActivity">
+
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:id="@+id/usernameLabel"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="50dp"
+        android:text="username"
+        android:layout_alignParentEnd="true"
+        android:singleLine="true" />
+
+    <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/usernameText"
+        android:layout_below="@id/usernameLabel"
+        android:background="@color/colorWhite"
+        android:padding="3dp"
+        android:singleLine="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/passwordLabel"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="50dp"
+        android:text="password"
+        android:layout_below="@id/usernameText"
+        android:singleLine="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:id="@+id/passwordText"
+        android:layout_below="@+id/passwordLabel"
+        android:layout_alignEnd="@+id/usernameText"
+        android:background="@color/colorWhite"
+        android:padding="3dp"
+        android:layout_alignParentStart="true" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="remember password"
+        android:layout_marginTop="20dp"
+        android:id="@+id/rememberPasswordCheckbox"
+        android:layout_below="@+id/passwordText"
+        android:shadowColor="@color/colorBlack"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/signup_text"
+        android:id="@+id/signupTextLink"
+        android:textColor="@color/colorTextLink"
+        android:clickable="true"
+        android:layout_marginTop="5dp"
+        android:layout_alignTop="@+id/rememberPasswordCheckbox"
+        android:layout_alignEnd="@+id/passwordText" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="login"
+        android:id="@+id/loginButton"
+        android:layout_alignParentBottom="true"
+        android:layout_alignEnd="@+id/passwordText"
+        android:background="@drawable/gray_button"
+        android:textColor="@color/colorWhite"
+        android:textAllCaps="false"
+        android:layout_marginBottom="50dp" />
+
+</RelativeLayout>

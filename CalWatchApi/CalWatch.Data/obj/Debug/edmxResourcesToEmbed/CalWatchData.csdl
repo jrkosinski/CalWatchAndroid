@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CalWatch.Data.Model" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="CalWatchEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="Meals" EntityType="CalWatch.Data.Model.Meal" />
+    <EntitySet Name="Users" EntityType="CalWatch.Data.Model.UserData" />
+    <AssociationSet Name="FK_Meals_Users" Association="CalWatch.Data.Model.FK_Meals_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Meals" EntitySet="Meals" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Meal">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="UserId" Nullable="false" />
+    <Property Type="String" Name="Description" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="DateTime" Nullable="false" Precision="7" />
+    <Property Type="Int32" Name="Calories" Nullable="false" />
+    <Property Type="DateTime" Name="DateCreated" Nullable="false" Precision="7" />
+    <Property Type="DateTime" Name="DateModified" Nullable="false" Precision="7" />
+  </EntityType>
+  <EntityType Name="UserData">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Username" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Password" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="PasswordSalt" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="AuthToken" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="Byte" Name="PermissionLevel" Nullable="false" />
+    <Property Type="Int32" Name="TargetCaloriesPerDay" Nullable="false" />
+    <Property Type="DateTime" Name="LastLogin" Nullable="false" Precision="7" />
+    <Property Type="DateTime" Name="DateCreated" Nullable="false" Precision="7" />
+    <Property Type="DateTime" Name="DateModified" Nullable="false" Precision="7" />
+    <NavigationProperty Name="Meals" Relationship="CalWatch.Data.Model.FK_Meals_Users" FromRole="Users" ToRole="Meals" />
+  </EntityType>
+  <Association Name="FK_Meals_Users">
+    <End Type="CalWatch.Data.Model.UserData" Role="Users" Multiplicity="1" />
+    <End Type="CalWatch.Data.Model.Meal" Role="Meals" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Meals">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

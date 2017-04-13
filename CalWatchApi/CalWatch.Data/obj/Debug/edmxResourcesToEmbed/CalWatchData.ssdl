@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CalWatch.Data.Model.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="CalWatchDataModelStoreContainer">
+    <EntitySet Name="Meals" EntityType="CalWatch.Data.Model.Store.Meals" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Users" EntityType="CalWatch.Data.Model.Store.Users" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_Meals_Users" Association="CalWatch.Data.Model.Store.FK_Meals_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Meals" EntitySet="Meals" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Meals">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" Nullable="false" MaxLength="200" />
+    <Property Name="DateTime" Type="datetime2" Nullable="false" />
+    <Property Name="Calories" Type="int" Nullable="false" />
+    <Property Name="DateCreated" Type="datetime2" Nullable="false" />
+    <Property Name="DateModified" Type="datetime2" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Username" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="Password" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="PasswordSalt" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="AuthToken" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="PermissionLevel" Type="tinyint" Nullable="false" />
+    <Property Name="TargetCaloriesPerDay" Type="int" Nullable="false" />
+    <Property Name="LastLogin" Type="datetime2" Nullable="false" />
+    <Property Name="DateCreated" Type="datetime2" Nullable="false" />
+    <Property Name="DateModified" Type="datetime2" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Meals_Users">
+    <End Role="Users" Type="CalWatch.Data.Model.Store.Users" Multiplicity="1" />
+    <End Role="Meals" Type="CalWatch.Data.Model.Store.Meals" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Meals">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
